@@ -25,7 +25,7 @@ SECRET_KEY = 'r+&vm!6-w#y=r=auuh^7w$!a_6+*ky4ml$5f1#qjkvakl=609r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aero.tech-iitb.org', 'localhost', '127.0.0.1']
 
 
 # Application definition
