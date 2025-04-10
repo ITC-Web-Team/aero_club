@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Aeromodelling Club, IITB{% endblock %}</title>
+    <meta charset="utf-8" />
+    {% load static %}
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="{% static 'css/noscript.css' %}"
+        type="text/css"
+    /></noscript>
+    {% include 'aero/components/ga_code.html' %} {% block extra_head %}{%
+    endblock %}
+  </head>
+  <body class="is-preload">
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="/">Aeromodelling Club, IITB</a></h1>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <div class="inner">
+          <h2>Menu</h2>
+          <ul class="links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/blogs/">Blogs</a></li>
+            <li><a href="/team/">Team</a></li>
+          </ul>
+          <a class="close">Close</a>
+        </div>
+      </nav>
+
+      {% block content %}{% endblock %}
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="inner">
+          <ul class="copyright">
+            <li>&copy; Aeromodelling Club, IIT Bombay. All rights reserved.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_scripts %}{% endblock %}
+  </body>
+</html>

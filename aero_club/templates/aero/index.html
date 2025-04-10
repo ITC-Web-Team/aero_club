@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aeromodelling Club, IIT Bombay</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'aero/css/nav.css' %}" />
+    <style>
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("{% static 'aero/css/images/main-image.jpeg' %}");
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+
+      .quote {
+        font-style: italic;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section-dark {
+        background-color: #f8f9fa;
+      }
+
+      .event-card {
+        margin-bottom: 2rem;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .event-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-img {
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 3rem;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: #007bff;
+      }
+
+      /* Enhanced responsive styles */
+      @media (max-width: 768px) {
+        .hero {
+          min-height: 80vh;
+          text-align: center;
+          padding: 4rem 0;
+        }
+
+        .quote {
+          font-size: 1.2rem;
+          margin: 1rem auto;
+          max-width: 90%;
+        }
+
+        .display-4 {
+          font-size: 2rem;
+        }
+
+        .section {
+          padding: 3rem 0;
+        }
+
+        .section-title {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .section-title:after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .col-lg-4 {
+          margin-top: 2rem;
+        }
+
+        .event-card {
+          max-width: 400px;
+          margin: 0 auto 2rem;
+        }
+      }
+
+      /* Additional responsive improvements */
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+
+      .event-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .event-card .card-body {
+        flex: 1;
+      }
+
+      .img-fluid {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+      /* Improved spacing for mobile */
+      @media (max-width: 576px) {
+        .container {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .hero {
+          min-height: 60vh;
+        }
+
+        .lead {
+          font-size: 1.1rem;
+        }
+
+        .event-img {
+          height: 200px;
+        }
+
+        .footer {
+          text-align: center;
+        }
+
+        .footer .text-md-right {
+          text-align: center !important;
+          margin-top: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'aero/components/navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="quote">
+              "Once you have tasted flight, you will forever walk the earth with
+              your eyes turned skyward, for there you have been, and there you
+              will always long to return."
+            </div>
+            <h1 class="display-4 mb-4">Welcome to Aeromodelling Club</h1>
+            <p class="lead">
+              If you've ever dreamed of touching the clouds, we're here to help
+              you build the wings!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="row">
+          <div class="col-lg-8">
+            <p class="lead">
+              The Aeromodelling Club at IIT Bombay stands as a beacon for
+              technical innovation and exploration, where the sky is not the
+              limit, but just the beginning. From drones and planes to rockets
+              and hovercrafts, the club is at the forefront of anything that
+              takes flight, drawing enthusiastic participation from over a
+              thousand students across various disciplines.
+            </p>
+            <p>
+              At the heart of the club's philosophy is a hands-on approach to
+              learning. Members are not just provided with resources but are
+              also immersed in a dynamic peer environment that encourages
+              creativity and innovation. If it can fly, glide, or soar, we're
+              all about making it happen!
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <img
+              src="{% static 'aero/css/images/iris1.JPG' %}"
+              alt="Club Activities"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Featured Events</h2>
+        <div class="row justify-content-center">
+          <!-- RC Plane Competition -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card event-card h-100">
+              <img
+                src="{% static 'aero/css/images/skyrush1.jpg' %}"
+                class="card-img-top event-img"
+                alt="RC Plane Competition"
+              />
+              <div class="card-body">
+                <h5 class="card-title">RC Plane Competition</h5>
+                <p class="card-text">
+                  Get ready for an epic showdown in the skies! Our signature
+                  freshman event featuring 125+ teams competing in a 1.5-month
+                  journey of design, build, and fly.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Airshow and Expo -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card event-card h-100">
+              <img
+                src="{% static 'aero/css/images/fpv.jpg' %}"
+                class="card-img-top event-img"
+                alt="Airshow and Expo"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Airshow and Expo</h5>
+                <p class="card-text">
+                  Experience thrilling aerobatic displays, FPV drones, and
+                  cutting-edge UAV technology at our annual showcase event.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workshops -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card event-card h-100">
+              <img
+                src="{% static 'aero/css/images/wing.jpg' %}"
+                class="card-img-top event-img"
+                alt="Workshops"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Workshops & Training</h5>
+                <p class="card-text">
+                  From glider building to drone programming, our workshops offer
+                  hands-on experience in various aspects of aeromodelling.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section text-center">
+      <div class="container">
+        <h2 class="mb-4">Ready to Take Flight?</h2>
+        <p class="lead mb-4">
+          For those who are fascinated by the magic of flight and are eager to
+          push the boundaries of what's possible, the Aeromodelling Club is the
+          perfect place to bring your ideas to life.
+        </p>
+        <a href="{% url 'aero-about' %}" class="btn btn-primary btn-lg"
+          >Join Us Today</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Contact Us</h5>
+            <p>Aeromodelling Club, IIT Bombay</p>
+          </div>
+          <div class="col-md-6 text-md-right">
+            <h5>Follow Us</h5>
+            <div class="social-links">
+              <!-- Add social media links here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

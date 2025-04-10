@@ -1,0 +1,346 @@
+{% extends 'aero/base.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Aeromodelling Club, IIT Bombay</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'aero/css/nav.css' %}" />
+    <style>
+      .event-header {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("{% static 'aero/css/images/skyrush1.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .event-section {
+        padding: 50px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .event-section:last-child {
+        border-bottom: none;
+      }
+
+      .event-img {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+      }
+
+      .highlight-box {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .event-header {
+          padding: 60px 0;
+          margin-bottom: 30px;
+        }
+
+        .event-header .display-4 {
+          font-size: 2rem;
+        }
+
+        .event-section {
+          padding: 30px 0;
+        }
+
+        .event-img {
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+          margin: 15px 0;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+        }
+
+        .lead {
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Small mobile devices */
+      @media (max-width: 576px) {
+        .container {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .event-header {
+          padding: 40px 0;
+        }
+
+        .event-header .display-4 {
+          font-size: 1.8rem;
+        }
+
+        .event-section {
+          padding: 20px 0;
+        }
+
+        .card {
+          margin-bottom: 1rem;
+        }
+
+        .footer {
+          text-align: center;
+        }
+
+        .footer .text-md-right {
+          text-align: center !important;
+          margin-top: 1rem;
+        }
+      }
+
+      /* Card improvements */
+      .card {
+        height: 100%;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'aero/components/navbar.html' %}
+
+    <!-- Header -->
+    <header class="event-header text-center">
+      <div class="container">
+        <h1 class="display-4">Our Events</h1>
+        <p class="lead">
+          Join us for exciting competitions, workshops, and flying sessions!
+        </p>
+      </div>
+    </header>
+
+    <!-- RC Plane Competition -->
+    <section class="event-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>RC Plane Competition</h2>
+            <p class="lead">Get ready for an epic showdown in the skies!</p>
+            <p>
+              The club's signature event for freshmen, the RC Plane Competition,
+              is a gateway to the world of flight. Under the guidance of
+              experienced club seniors, you'll delve into the fundamentals of
+              aerodynamics, designing and flying your very first airplane!
+            </p>
+            <div class="highlight-box">
+              <h5>Event Highlights:</h5>
+              <ul>
+                <li>1.5 months of intense competition</li>
+                <li>125+ participating teams</li>
+                <li>Teams of up to 4 students</li>
+                <li>Hands-on experience in design and construction</li>
+                <li>Expert guidance from seniors</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="{% static 'aero/css/images/skyrush1.jpg' %}"
+              alt="RC Plane Competition"
+              class="img-fluid event-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Airshow and Expo -->
+    <section class="event-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <h2>Airshow and UAV Expo</h2>
+            <p>
+              The RC 3D Airshow is an exhilarating display of aeromodelling
+              prowess! Held on the Gymkhana grounds, the event brings together
+              some of the best pilots and aeromodellers to showcase their
+              incredible flying skills.
+            </p>
+            <div class="highlight-box">
+              <h5>Featured Attractions:</h5>
+              <ul>
+                <li>Aerobatic stunts by top Indian RC pilots</li>
+                <li>Electric planes and helicopters</li>
+                <li>FPV drones and gliders</li>
+                <li>Innovative UAV projects</li>
+                <li>Special demonstrations</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <img
+              src="{% static 'aero/css/images/fpv.jpg' %}"
+              alt="Airshow"
+              class="img-fluid event-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workshops -->
+    <section class="event-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>Workshops & Training</h2>
+            <p>
+              From glider building to hovercraft creation, our workshops offer
+              hands-on experience in various aspects of aeromodelling.
+            </p>
+            <div class="highlight-box">
+              <h5>Workshop Series:</h5>
+              <ul>
+                <li>Glider Workshop for Freshies</li>
+                <li>Hovercraft Workshop</li>
+                <li>DroneZone - Flight Controller Workshop</li>
+                <li>Technical Summer School</li>
+                <li>AE229 Lab Course</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="{% static 'aero/css/images/wing.jpg' %}"
+              alt="Workshops"
+              class="img-fluid event-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flying Sessions -->
+    <section class="event-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <h2>Lukkha Flying Sessions</h2>
+            <p>
+              During January and February, we keep the excitement soaring with
+              our weekend Lukkha Flying Sessions. Perfect for those who can't
+              get enough of flying!
+            </p>
+            <div class="highlight-box">
+              <h5>Session Features:</h5>
+              <ul>
+                <li>Regular weekend sessions</li>
+                <li>RC flying practice</li>
+                <li>Aerobatic maneuvers training</li>
+                <li>Payload mechanism experiments</li>
+                <li>Quad flying opportunities</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <img
+              src="{% static 'aero/css/images/fpv2.jpg' %}"
+              alt="Flying Sessions"
+              class="img-fluid event-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Events -->
+    <section class="event-section">
+      <div class="container">
+        <h2 class="text-center mb-5">Other Exciting Events</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Water Rocket GC</h5>
+                <p class="card-text">
+                  Teams compete to design and launch water rockets,
+                  experimenting with fin designs and automatic parachute
+                  deployment.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Tech RnD Expo</h5>
+                <p class="card-text">
+                  Showcase of RC planes, whoop drones, and innovative projects,
+                  featuring flight simulators and night drone racing.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Rewind Series</h5>
+                <p class="card-text">
+                  Relive the excitement of RC plane competitions through focused
+                  sessions on different aspects of the event.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Contact Us</h5>
+            <p>Aeromodelling Club, IIT Bombay</p>
+          </div>
+          <div class="col-md-6 text-md-right">
+            <h5>Follow Us</h5>
+            <div class="social-links">
+              <!-- Add social media links here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+{% endblock %}
